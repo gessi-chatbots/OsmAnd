@@ -186,9 +186,13 @@ public abstract class MapRenderingTypes {
 	
 	protected MapRulType getRuleType(String tag, String val, boolean poi, boolean map) {
 		Map<String, MapRulType> types = getEncodingRuleTypes();
-		tag = lc(tag);
-		val = lc(val);
 		MapRulType rType = types.get(constructRuleKey(tag, val));
+		if (rType == null) {
+			tag = lc(tag);
+			val = lc(val);
+			rType = types.get(constructRuleKey(tag, val));
+		}
+
 		if (rType == null || (!rType.isPOI() && poi) || (!rType.isMap() && map)) {
 			rType = types.get(constructRuleKey(tag, null));
 		}
