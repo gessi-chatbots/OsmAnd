@@ -13,11 +13,11 @@ import com.amazon.device.iap.model.PurchaseResponse;
 import com.amazon.device.iap.model.Receipt;
 import com.amazon.device.iap.model.UserData;
 
-import net.osmand.AndroidNetworkUtils;
-import net.osmand.AndroidNetworkUtils.OnSendRequestsListener;
-import net.osmand.AndroidNetworkUtils.Request;
-import net.osmand.AndroidNetworkUtils.RequestResponse;
-import net.osmand.AndroidUtils;
+import net.osmand.plus.utils.AndroidNetworkUtils;
+import net.osmand.plus.utils.AndroidNetworkUtils.OnSendRequestsListener;
+import net.osmand.plus.utils.AndroidNetworkUtils.Request;
+import net.osmand.plus.utils.AndroidNetworkUtils.RequestResponse;
+import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.inapp.InAppPurchases.InAppPurchase;
