@@ -119,6 +119,8 @@ import static net.osmand.plus.measurementtool.command.ClearPointsCommand.ClearCo
 import static net.osmand.plus.measurementtool.command.ClearPointsCommand.ClearCommandMode.BEFORE;
 import static net.osmand.plus.routing.TransportRoutingHelper.PUBLIC_TRANSPORT_KEY;
 
+import edu.upc.gessi.SourceController;
+
 public class MeasurementToolFragment extends BaseOsmAndFragment implements RouteBetweenPointsFragmentListener,
 		OptionsFragmentListener, GpxApproximationFragmentListener, SelectedPointFragmentListener,
 		SaveAsNewTrackFragmentListener, MapControlsThemeInfoProvider, GpsFilterFragmentLister {
@@ -1864,6 +1866,12 @@ public class MeasurementToolFragment extends BaseOsmAndFragment implements Route
 								.setAllCaps(false);
 						UiUtilities.setupSnackbar(snackbar, nightMode);
 						snackbar.show();
+
+						/**
+						 * Sending broadcast to Chatbot App
+						 */
+						SourceController.planRoute(this, savedGpxFile);
+
 						dismiss(mapActivity, false);
 						break;
 					case SHOW_IS_SAVED_FRAGMENT:
